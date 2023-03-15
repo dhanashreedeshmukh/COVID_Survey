@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+============================
+Name - Dhanashree Deshmukh
+Id - dd3349@drexel.edu
+============================
+-->
+
+<html>
+    <head>
+
+        <!-- #1 : Webpage title -->
+        <title>COVID-19 Survey BY dd3349</title>
+        <!-- #15 : External CSS to decorate file -->
+        <link rel="stylesheet" href="a8_form.css">
+
+        <!-- External Javascript -->
+        <script defer src="a8_script.js">
+        </script>
+        
+
+    </head>
+
+    <body>
+
+        <!-- #2 : Heading level 1 -->
+        <h1>COVID-19 Survey</h1>
+        
+        <!-- #3 : Heading level 2 - Personal Information -->
+        <h2>Personal Information</h2>
+        
+        <div id="error"></div>
+        <form id = "form" name = "myForm" action = "/" method = "GET">
+            <!-- #4 : 4 Text blanks to received user input -->
+            <label for = "fname">First name * : </label><br>
+            <input type = "text" id = "fname" name = "fname"><br>
+            <label for = "lname">Last name *: </label><br>
+            <input type = "text" id = "lname" name = "lname"><br>
+            <label for = "email">Email *: </label><br>
+            <input type = "email" id = "email" name = "email"><br>
+            <label for = "phone">Phone : </label><br>
+            <input type = "text" id = "phone" name = "phone"><br> 
+        
+            <!-- #3 : Heading level 2 - Vaccine History -->
+            <h2>Vaccine History</h2>
+            <p>Have you ever received a dose of COVID-19 vaccine? * </p>
+
+            <!-- #5 : Radio buttons to received input from user to check if he is vaccinated -->
+            <input type="radio" id="YES" name="vaccinated" onclick = "handleRadioClick(0)" value="YES" checked>
+            <label for="YES">YES</label><br>
+            <input type="radio" id="NO" name="vaccinated" onclick = "handleRadioClick(1)" value="NO" >
+            <label for="NO">NO</label><br>
+
+            <!-- #6 : Checkbox to select name of vaccine -->
+            <div id = "vaccinename">
+            <p>If yes, Which vaccine product did you receive?</p>
+            <input type="checkbox" id="Pfizer" name="vaccine" value="Pfizer">
+            <label for="Pfizer">Pfizer</label><br>
+            <input type="checkbox" id="Moderna" name="vaccine" value="Moderna">
+            <label for="Moderna">Moderna</label><br>
+            <input type="checkbox" id="Covishield" name="vaccine" value="Covishield">
+            <label for="Covishield">Covishield</label><br>
+            <input type="checkbox" id="Other" name="Other" value="Other">
+            <label for="Other">Other</label><br>
+            </div>
+
+            <!-- #7 : Radio buttons to receive input from user to check if he is sick -->
+            <!-- #3 : Heading level 2 - Medical Condition -->
+            <h2>Medical Condition</h2>
+            <p>Are you feeling sick today?*</p>
+            <input type="radio" id="YES" name="sickness" value="YES">
+            <label for="YES">YES</label><br>
+            <input type="radio" id="NO" name="sickness" value="NO">
+            <label for="NO">NO</label><br>
+            
+            <p> In the past 24 hours, have you experienced a new onset of any of the following symptoms? Check all that apply </p>
+            <input type="checkbox" id="Fever" name="Fever" value="Fever">
+            <label for="Fever">Fever</label>
+            <input type="checkbox" id="Cough" name="Cough" value="Cough">
+            <label for="Cough">Cough</label>
+            <input type="checkbox" id="Sore Throat" name="Sore Throat" value="Sore Throat">
+            <label for="Sore Throat">Sore Throat</label>
+            <input type="checkbox" id="Headache" name="Headache" value="Headache">
+            <label for="Headache">Headache</label>
+ 
+            <p>In the last 2 weeks, did you care for or have close contact with someone diagnosed with <a href = "https://www.cdc.gov/coronavirus/2019-ncov/php/contact-tracing/contact-tracingplan/appendix.html#contact">COVID 19</a>*
+            </p>
+            <input type="radio" id="YES" name="contact" value="YES">
+            <label for="YES">Yes</label>
+            <input type="radio" id="NO" name="contact" value="NO">
+            <label for="NO">No</label>
+            <input type="radio" id="Not Sure" name="contact" value="Not Sure">
+            <label for="Not Sure">Not Sure</label><br><br>
+
+            <input type="reset" value="Reset"><br>
+            <input type="button" id= "submit_survey"  name = "submit_survey" value = "Submit Survey" onClick = "validate()">
+        </form>
+    </body>
+</html>
